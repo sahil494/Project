@@ -8,9 +8,9 @@ form {border: 4px solid #f1f1f1;
      text-align:center;
 }
 
-input[type=email], input[type=password] {
-    width: 30%;
-    padding: 12px 20px;
+input[type=text], input[type=password] {
+    width: 25%;
+    padding: 12px 25px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -45,20 +45,31 @@ img.voting {
 </head>
 <body bgcolor="#E6E6FA">
 
-<h2> <center> Login Form</center></h2>
-<form id="form" action="LoginServlet" method="POST">
+<h2><center> Login Form</center></h2>
+<form id="form" action="LoginServlet" method="POST" onsubmit="return validate()">
 <div class="imgcontainer">
 <img src="vote.jpg" alt="vote" class="voting">
 </div>
 <div class="container">
-    <label for="email"><b>&nbsp;Email-ID:</b></label>
-<input type="email" placeholder="Enter Email" name="email"/>
+    <label for="email"><b>Student ID:</b></label>
+<input type="text" placeholder="Enter your Id" name="email" minlength="10" maxlength="10"/>
 <br>
 <label for="password"><b>Password:</b></label>
-<input type="password" placeholder="Enter password" name="password"/>
+<input type="password" placeholder="Enter password" name="password" id="myInput"/><br>
+<input type="checkbox" onclick="myFunction()">Show Password
+<script>
+function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+</script>
 <br><br>
-<center><input type="Submit" id="log" value="Login"/></center>
-<h4><center><a href="signup.jsp" style="color:blue">Don't have an account</center></a></h4>
+<center><a href="index.html"><input type="Submit" id="log" value="Login"/></a></center>
+<h4><center><p>Need an account? <a href="signup.jsp" style="color:blue">SignUp</center></a></h4>
 </div>				
 </form>	
 </body>

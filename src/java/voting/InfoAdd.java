@@ -27,11 +27,13 @@ public class InfoAdd extends HttpServlet {
         RegisterDao rDao = new RegisterDao();
         Boolean check=rDao.getRegistered(Reg);
         if(check==true)
-            req.getRequestDispatcher("/LogIn.jsp").forward(req, res);
-        else
-        {
-            req.setAttribute("errMessage", check);
-            req.getRequestDispatcher("/SignUp.jsp").forward(req, res);
+            req.getRequestDispatcher("voteus.jsp").forward(req, res);
+        else {
+            PrintWriter out = res.getWriter();
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Already have an account!');");
+            out.println("location='signup.jsp';");
+            out.println("</script>");
         }
     }
     
