@@ -45,6 +45,7 @@ public class newservet extends HttpServlet {
             String sessionEmail = (String) hs.getAttribute("email");
             if (sessionEmail == null) {
                 res.sendRedirect("login.jsp");
+                return;
             } else {
                 if (ids.contains(sessionEmail)) {
                     System.out.println("Already voted");

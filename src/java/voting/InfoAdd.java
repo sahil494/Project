@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns = {"/InfoAdd"})
 public class InfoAdd extends HttpServlet {
@@ -26,9 +27,11 @@ public class InfoAdd extends HttpServlet {
         Reg.setAddress(address);
         RegisterDao rDao = new RegisterDao();
         Boolean check=rDao.getRegistered(Reg);
-        if(check==true)
+        if(check==true) {
+            HttpSession hs = req.getSession();
+            hs.setAttribute("email", email);
             req.getRequestDispatcher("voteus.jsp").forward(req, res);
-        else {
+        } else {
             PrintWriter out = res.getWriter();
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Already have an account!');");

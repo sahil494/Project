@@ -137,19 +137,16 @@ public final class results_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    width: 100%;\n");
       out.write("    float:right;\n");
       out.write("}\n");
-      out.write("\n");
       out.write("  </style>\n");
-      out.write("  \n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <nav class=\"navbar navbar-inverse\">\n");
       out.write("  <div class=\"container-fluid\" >\n");
-      out.write("    <div class=\"navbar-nav mr-auto\">\n");
       out.write("        <div class=\"navbar-right\">\n");
-      out.write("      <form action=\"logout\" method=\"post\"><button type=\"submit\" class=\"btn\" id=\"boii\">Logout</button></form>\n");
+      out.write("      <form action=\"LogoutServlet\" method=\"POST\"><button type=\"submit\" class=\"btn\" id=\"boii\">Logout</button></form>\n");
       out.write("    </div>\n");
       out.write("  </div>\n");
-      out.write("  </div>\n");
+      out.write("    <img src=\"congo.jpg\" width=\"1500\" height=\"650\">\n");
       out.write("</nav>\n");
       out.write("      ");
   if(!ar.isEmpty()){
