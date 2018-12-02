@@ -100,7 +100,7 @@
       <form action="LogoutServlet" method="POST"><button type="submit" class="btn" id="boii">Logout</button></form>
     </div>
   </div>
-    <img src="bravo.jpg" width="1500" height="200">
+    <img src="bravo.jpg" width="1350" height="200">
 </nav>
       <%  if(!ar.isEmpty()){
           for(int i=0;i<ar.size();i++)
